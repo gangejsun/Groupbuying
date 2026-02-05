@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #CC0000;
+  --color-secondary: #00539B;
+  --color-background: #F6F7F9;
+  --color-surface: #FFFFFF;
+  
+  --color-text-primary: #171717;
+  --color-text-secondary: #595959;
+  --color-text-tertiary: #767676;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #0066CC;
+
+  --color-accent-rating: #FFA726;
+  --color-accent-success: #1B5E20;
+  --color-accent-error: #D32F2F;
+  --color-accent-promo-green: #C8E6C9;
+  --color-accent-promo-pink: #F8BBD0;
+
+  --color-border-light: #E5E5E5;
+  --color-border-default: #D1D1D1;
+  --color-border-active: #171717;
+
+  --color-input-bg: #F3F4F6;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-floating: 0px -4px 10px rgba(0,0,0,0.1);
+
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-heavy: 800;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-base);
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    display: block;
+    min-width: unset;
+    min-height: 100dvh;
+  }
+
+  h1 { font-size: 28px; font-weight: var(--font-weight-heavy); line-height: 1.2; }
+  h2 { font-size: 22px; font-weight: var(--font-weight-bold); line-height: 1.2; }
+  h3 { font-size: 18px; font-weight: var(--font-weight-medium); line-height: 1.2; }
+}
+
+@layer components {
+  .btn-pill-outline {
+    border: 1px solid var(--color-border-active);
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border-radius: 9999px;
+    padding: 8px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-pill-outline:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+  
+  .card-product {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-light);
+    padding: 16px 0;
+  }
+
+  .bottom-nav {
+    height: 80px;
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+  }
+
+  .screen-container {
+    padding: 16px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+}
